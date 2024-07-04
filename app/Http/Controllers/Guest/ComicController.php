@@ -27,7 +27,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-        //
+        return view('comics.create');
     }
 
     /**
@@ -35,7 +35,16 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'titolo' => 'required|string|max:255',
+            // Aggiungi qui altre regole di validazione per altri campi
+        ]);
+
+        // Creare un nuovo fumetto con i dati validati
+        $comic = Comic::create($validatedData);
+
+        // Reindirizzare l'utente alla pagina dei dettagli del fumetto creato
+        return redirect()->route('show', ['id' => $comic->id]);
     }
 
     /**
