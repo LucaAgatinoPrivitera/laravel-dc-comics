@@ -19,4 +19,5 @@
 			<h2>Autore: {{ $fumetti['autore'] }}</h2>
 			<h2>Descrizione: {{ $fumetti['descrizione'] }}</h2>
 		</div>
+		<a href="/">Torna alla home</a>
 @endsection
