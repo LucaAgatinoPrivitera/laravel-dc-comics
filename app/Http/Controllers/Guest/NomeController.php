@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\MyModel;
+use App\Models\Comic;
 use Illuminate\Http\Request;
 
 class NomeController extends Controller
@@ -12,7 +12,7 @@ class NomeController extends Controller
      */
     public function index()
     {
-        $gamesList = MyModel::all();
+        $gamesList = Comic::all();
 
         $data = [
             "catalog" => $gamesList

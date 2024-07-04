@@ -16,7 +16,7 @@ class ComicController extends Controller
         $gamesList = Comic::all();
 
         $data = [
-            "catalog" => "$gamesList"
+            "fumetti" => $gamesList
         ];
 
         return view("home", $data);
@@ -43,7 +43,13 @@ class ComicController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $gamesList = Comic::find($id);
+
+        $data = [
+            "fumetti" => $gamesList
+        ];
+
+        return view("show", $data);
     }
 
     /**

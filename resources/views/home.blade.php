@@ -1,7 +1,12 @@
 @extends('layouts.app')
 
+<?php
+echo dd($fumetti);
+?>
 @section('content')
-<h1>Dati da "config/data.php": {{ $catalog }}</h1>
-<p>This is my paragraph content.</p>
-<button class="btn btn-primary">Cliccami</button>
+	@foreach ($fumetti as $fumetto)
+		<div style="margin-bottom: 5rem">
+			<h1>Titolo: {{ $fumetto['titolo'] }}</h1>
+		</div>
+	@endforeach
 @endsection
