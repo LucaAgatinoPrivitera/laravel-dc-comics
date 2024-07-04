@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\NomeController;
+use App\Http\Controllers\Guest\ComicController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -15,4 +15,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [NomeController::class, "home"])->name("home");
+Route::get('/', [ComicController::class, "index"])->name("home");
