@@ -12,7 +12,7 @@
 			<div class="col-12">
 
 				{{-- Questo form non carica una generica rotta "store" ma ha bisogno dell'id del gioco da aggiornare --}}
-				<form method="GET" action="{{ route('comics.edit', $comic->id) }}">
+				<form method="GET" action="{{ route('comics.update', $comic->id) }}">
 					@method('PUT') {{-- v. slide da 32 a 35 --}}
 					@csrf
 					<div class="mb-3">

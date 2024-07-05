@@ -112,7 +112,7 @@ class ComicController extends Controller
 
         $data = $request->all();
 
-        return dump($data);
+        // return dump($data);
 
         // non ho bisogno di creare un new comic
         // cambio i valori delle proprietà
