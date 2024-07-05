@@ -25,15 +25,15 @@
 					</div>
 					<div class="mb-3">
 						<label class="form-label">Descrizione</label>
-						<input type="number" min="0.99" max="999.99" class="form-control" name="descrizione" required
+						<input type="text" class="form-control" name="descrizione" required
 							value="{{ $comic->descrizione }}">
 					</div>
 					<div class="mb-3">
 						<label class="form-label">Immagine</label>
-						<input type="number" min="1980" max="2024" class="form-control" name="img" required
+						<input type="text" class="form-control" name="img" required
 							value="{{ $comic->img }}">
 					</div>
-					
+
 					<button type="submit" class="btn btn-primary">Submit</button>
 				</form>
 

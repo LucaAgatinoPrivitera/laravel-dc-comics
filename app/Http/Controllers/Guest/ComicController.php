@@ -13,10 +13,10 @@ class ComicController extends Controller
      */
     public function index()
     {
-        $gamesList = Comic::all();
+        $comicsList = Comic::all();
 
         $data = [
-            "fumetti" => $gamesList
+            "fumetti" => $comicsList
         ];
 
         return view("home", $data);
@@ -51,14 +51,14 @@ class ComicController extends Controller
 
         $data = $request->all();
         // dump($data);
-        
-        // Creo un nuovo Game e ne scrivo i dati
+
+        // Creo un nuovo comic e ne scrivo i dati
         $newComic = new Comic();
         $newComic->titolo = $data["titolo"];
         $newComic->autore = $data["autore"];
         $newComic->descrizione = $data["descrizione"];
         $newComic->img = $data["img"];
-        // Scrivo il Game sul database
+        // Scrivo il comic sul database
         $newComic->save();
     }
 
@@ -67,10 +67,10 @@ class ComicController extends Controller
      */
     public function show(string $id)
     {
-        $gamesList = Comic::findOrFail($id);
+        $comicsList = Comic::findOrFail($id);
 
         $data = [
-            "fumetti" => $gamesList
+            "fumetti" => $comicsList
         ];
 
         return view("show", $data);
@@ -79,10 +79,11 @@ class ComicController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Comic $comic)
+    public function edit(string $id)
     {
+        $comicSingolo = Comic::findOrFail($id);
         $data = [
-            "comic" => $comic
+            "comic" => $comicSingolo
         ];
 
         return view("comics.edit", $data);
@@ -91,9 +92,39 @@ class ComicController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Comic $comic)
     {
-        //
+        // $comic è la nostra istanza di comic
+        // $data è un array associativo con tutti i dati inviati dal form
+
+        //come per il metodo store, recupero tutti i dati inviati con il form
+
+        
+        // $comicsList = Comic::all();
+        // $data = [
+        //     "fumetti" => $comicsList
+        // ];
+        // $data = Comic::all();
+        // $data =[
+        //     Comic::all()
+        // ];
+
+
+        $data = $request->all();
+
+        return dump($data);
+
+        // non ho bisogno di creare un new comic
+        // cambio i valori delle proprietà
+        // esempio: $comic->nomeCampoSulDatabase = $data["nameDellaInputNelForm"];
+        $comic->titolo = $data["titolo"];
+        $comic->autore = $data["autore"];
+        $comic->descrizione = $data["descrizione"];
+        $comic->img = $data["img"];
+        $comic->save();
+
+        //come per il metodo store, redireziono sulla pagina che mostra i dettagli del gioco
+        return redirect()->route('comics.show', $comic->id);
     }
 
     /**
