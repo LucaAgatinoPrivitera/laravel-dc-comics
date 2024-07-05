@@ -66,6 +66,10 @@ Esempio
         }
     }
 ```
+#### Documentazione Faker ####
+`https://fakerphp.org/`
+#### Laravel column-type ####
+`https://laravel.com/docs/10.x/migrations#available-column-types`
 
 
 
