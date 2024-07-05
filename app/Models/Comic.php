@@ -12,4 +12,5 @@ class Comic extends Model
         'titolo',
         // Aggiungi qui altri campi se necessario
     ];
+    public $timestamps = false;
 }

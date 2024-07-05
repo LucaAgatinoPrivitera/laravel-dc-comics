@@ -35,7 +35,7 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
+        /*$validatedData = $request->validate([
             'titolo' => 'required|string|max:255',
             // Aggiungi qui altre regole di validazione per altri campi
         ]);
@@ -44,7 +44,22 @@ class ComicController extends Controller
         $comic = Comic::create($validatedData);
 
         // Reindirizzare l'utente alla pagina dei dettagli del fumetto creato
-        return redirect()->route('show', ['id' => $comic->id]);
+        return redirect()->route('show', ['id' => $comic->id]);*/
+
+
+        // return dump( $request->all() );
+
+        $data = $request->all();
+        // dump($data);
+        
+        // Creo un nuovo Game e ne scrivo i dati
+        $newComic = new Comic();
+        $newComic->titolo = $data["titolo"];
+        $newComic->autore = $data["autore"];
+        $newComic->descrizione = $data["descrizione"];
+        $newComic->img = $data["img"];
+        // Scrivo il Game sul database
+        $newComic->save();
     }
 
     /**

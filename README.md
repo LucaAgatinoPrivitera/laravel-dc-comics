@@ -45,3 +45,9 @@ Arrivati qui il form dovrebbe mostrare i dati, senza farli salvare sul db.
 :roccia: MILESTONE 4 / BONUS :regalo:
 Assicuratevi che il form sia completo di method, action e CSRF. Usate le slide da 32 a 35 oppure le righe 15-16 del mio codice.
 Seguite i passaggi della milestone 2, questa volta modificando un Comic già esistente. Ragionate, usate dump e aiutatevi col codice.
+
+# Da chiedere: #
+    ComicController, perché ChatGPT ieri mi ha fatto mettere questo? `protected $fillable = [
+        'titolo',
+        // Aggiungi qui altri campi se necessario
+    ];`
