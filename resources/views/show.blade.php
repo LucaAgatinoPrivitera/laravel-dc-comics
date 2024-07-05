@@ -15,6 +15,7 @@
 
 @section('content')
 		<div style="margin-bottom: 5rem">
+			<img style="width: 300px" src="{{ $fumetti['img'] }}" alt="">
 			<h1>Titolo: {{ $fumetti['titolo'] }}</h1>
 			<h2>Autore: {{ $fumetti['autore'] }}</h2>
 			<h2>Descrizione: {{ $fumetti['descrizione'] }}</h2>

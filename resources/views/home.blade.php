@@ -2,6 +2,7 @@
 
 
 @section('content')
+<a href="{{ route('comics.create') }}">Aggiungi un fumetto</a>
 	@foreach ($fumetti as $fumetto)
 		<div style="margin-bottom: 5rem">
 			<h1>Titolo: {{ $fumetto['titolo'] }}</h1>
