@@ -52,7 +52,7 @@ class ComicController extends Controller
      */
     public function show(string $id)
     {
-        $gamesList = Comic::find($id);
+        $gamesList = Comic::findOrFail($id);
 
         $data = [
             "fumetti" => $gamesList
