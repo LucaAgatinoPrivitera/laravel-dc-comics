@@ -10,6 +10,11 @@
 			<a style="display: block" href="{{ route('show', ['id' => $fumetto->id]) }}">Link al fumetto</a>
 			{{-- {{ route(‘comics.show’, $comic->id) }} Si può fare anche così, presumo quando si ha solo 1 controller --}}
 			<a style="display: block" href="{{ route('comics.edit', ['id' => $fumetto->id]) }}">Modifica il fumetto</a>
+			<form action="{{ route('comics.destroy', $fumetto->id) }}" method="POST">
+				@csrf
+				@method("DELETE")
+				<button type="submit" class="btn btn-danger">Delete</a>
+			</form>
 		</div>
 	@endforeach
 @endsection

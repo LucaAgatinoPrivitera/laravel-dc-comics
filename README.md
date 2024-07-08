@@ -51,3 +51,6 @@ Seguite i passaggi della milestone 2, questa volta modificando un Comic già esi
         'titolo',
         // Aggiungi qui altri campi se necessario
     ];`
+
+        Differenze tra return view e return redirect
+        /comics deve mandare allo store?
