@@ -20,6 +20,7 @@
 
 `php artisan make:controller Folder/NameController` (creo il controller dove dentro ci metto le funzioni per le route)
 
+### Il model va messo al singolare ###
 
 
 ## Migration ##
@@ -80,3 +81,5 @@ Nello show posso usare `findOrFail($id)` in modo tale che nel caso l'id non esis
 ```
 $gamesList = Comic::findOrFail($id);
 ```
+
+
