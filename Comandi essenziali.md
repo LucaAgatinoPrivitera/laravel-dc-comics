@@ -76,6 +76,8 @@ Esempio
 
 ## Resource Controller ##
 `php artisan make:controller --resource Guest/NomeController` così si crea un resource controller, il quale ci permette di creare una CRUD (Create, Read, Update/Patch, Delete).
+### Controller direttamente collegato al model senza ricordarsi di fare l'import ###
+`php artisan make:controller PhotoController --model=Photo --resource`
 
 Nello show posso usare `findOrFail($id)` in modo tale che nel caso l'id non esista io ottenga automaticamente 404 error al posto dell'if
 ```
