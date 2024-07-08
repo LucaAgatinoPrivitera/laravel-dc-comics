@@ -49,6 +49,7 @@ class ComicController extends Controller
 
         // return dump( $request->all() );
 
+        
         $data = $request->all();
         // dump($data);
 

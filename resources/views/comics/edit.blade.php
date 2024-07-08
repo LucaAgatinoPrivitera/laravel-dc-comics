@@ -5,6 +5,15 @@
 		<div class="row">
 			<div class="col-12">
 				<h1>Modifica: {{ $comic->name }}</h1>
+				@if ($errors->any())
+					<div class="alert alert-danger">
+						<ul>
+							@foreach ($errors->all() as $error)
+								<li>{{ $error }}</li>
+							@endforeach
+						</ul>
+					</div>
+				@endif
 			</div>
 		</div>
 
@@ -18,6 +27,9 @@
 					<div class="mb-3">
 						<label class="form-label">Titolo</label>
 						<input type="text" class="form-control" name="titolo" required value="{{ $comic->titolo }}">
+						@error('name')
+							<div>{{ $message }}</div>
+						@enderror
 					</div>
 					<div class="mb-3">
 						<label class="form-label">Autore</label>
@@ -25,13 +37,11 @@
 					</div>
 					<div class="mb-3">
 						<label class="form-label">Descrizione</label>
-						<input type="text" class="form-control" name="descrizione" required
-							value="{{ $comic->descrizione }}">
+						<input type="text" class="form-control" name="descrizione" required value="{{ $comic->descrizione }}">
 					</div>
 					<div class="mb-3">
 						<label class="form-label">Immagine</label>
-						<input type="text" class="form-control" name="img" required
-							value="{{ $comic->img }}">
+						<input type="text" class="form-control" name="img" required value="{{ $comic->img }}">
 					</div>
 
 					<button type="submit" class="btn btn-primary">Submit</button>
