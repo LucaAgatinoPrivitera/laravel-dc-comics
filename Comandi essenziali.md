@@ -85,3 +85,8 @@ $gamesList = Comic::findOrFail($id);
 ```
 
 
+
+Posso migrare e lanciare un seed specifico
+php artisan migrate:fresh && php artisan db:seed --class=NomeDelSeeder
+
+Altrimenti php artisan migrate:fresh e devo mettere dentro DatabaseSeeder, devo aggiungere this->call qualcosa
