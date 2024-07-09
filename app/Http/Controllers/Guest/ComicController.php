@@ -61,6 +61,15 @@ class ComicController extends Controller
         $newComic->img = $data["img"];
         // Scrivo il comic sul database
         $newComic->save();
+
+        // Col view si fa così, ma in pagina non si vedrà l'id
+        // $data = [
+            // "fumetti" => $newComic
+        // ];
+        // return view("show", $data);
+
+        return redirect()->route("comics.show" , $newComic);
+
     }
 
     /**
